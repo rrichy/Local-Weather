@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500&display=swap');
+
+html {
+	background-color: #46abf2;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-weight: 300;
+}
+
+h3 {
+	margin: 0;
+	font-weight: 300;
+	height: 1.4rem;
+	color: #073457;
+}
+
+p {
+	margin: 0;
+	font-weight: 300;
+	height: 1.4rem;
+	color: #073457;
+}
+
+#weather-container, #additional-info {
+	display: grid;
+	place-items: center;
+	width: 320px;
+	margin: 0 auto 40px auto;
+}
+
+#additional-info {
+	background-color: #fff;
+	padding: 1.2rem;
+	border-radius: .5rem;
+	box-shadow: .5rem .5rem #b5d8fe;
+}
+
+#additional-info > p {
+	justify-self: left;
+}
+
+#clear, #cloud, #drizzle, #rain, #snow, #thunderstorm {
+	width: inherit; 
+	height: 300px;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%);
+	z-index: -1;
+	animation: weathermove 7s infinite;
+}
+
+#temp {
+	margin-top: 6.5rem;
+}
+
+.temperature {
+	font-size: 5.2rem;
+	font-weight: 500;
+	color: #4679a2;
+	margin: 0;
+	height: 6.7rem;
+}
+
+.info {
+	display: grid;
+	grid-template-columns: auto auto;
+	justify-content:space-between;
+	width: inherit;
+}
+
+#clear > #sunshine {
+	animation: grow 2s infinite;
+}
+
+#rain > #drop1 {
+	animation: raindrop .9s ease-out infinite;
+}
+
+#rain > #drop2 {
+	animation: raindrop .5s ease-out infinite;
+}
+
+#rain > #drop3 {
+	animation: raindrop .8s ease-out infinite;
+}
+
+#rain > #drop4 {
+	animation: raindrop .65s ease-out infinite;
+}
+
+#rain > #drop5 {
+	animation: raindrop .7s ease-out infinite;
+}
+
+@keyframes weathermove {
+	0% { left: 48%; }
+	50% { left: 52%; }
+	100% { left: 48%; }
+}
+
+@keyframes raindrop {
+	from { transform: translate(0,0); opacity: 1;}
+	to { transform: translate(-5%, 100%); opacity: 0;}
+}
+
+@keyframes grow {
+	0% { transform: scale(.8, .8); }
+	50% { transform: scale(1, 1); }
+	100% { transform: scale(.8, .8); }
+}
