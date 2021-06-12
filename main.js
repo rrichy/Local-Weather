@@ -16,7 +16,8 @@ window.onload = () => {
             
             // $('#weather-pic')[0].src = weather.toLowerCase() + '.svg';
             // $('#weather-pic')[0].data = weather.toLowerCase() + '.svg';
-            
+            console.log(weather.toLowerCase());
+            $('#' + weather.toLowerCase())[0].style.display = 'block';
             switch(weather.toLowerCase()) {
                 case 'clear':
                 case 'drizzle':
