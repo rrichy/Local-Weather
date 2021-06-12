@@ -38,7 +38,7 @@ p {
 	justify-self: left;
 }
 
-#clear, #cloud, #drizzle, #rain, #snow, #thunderstorm {
+#clear, #clouds, #drizzle, #rain, #snow, #thunderstorm {
 	width: inherit; 
 	height: 300px;
 	position: absolute;
@@ -67,28 +67,58 @@ p {
 	width: inherit;
 }
 
-#clear > #sunshine {
-	animation: grow 2s infinite;
+#sunshine {
+	animation: grow 5s infinite;
 }
 
-#rain > #drop1 {
+#drop1 {
 	animation: raindrop .9s ease-out infinite;
 }
 
-#rain > #drop2 {
+#drop2 {
 	animation: raindrop .5s ease-out infinite;
 }
 
-#rain > #drop3 {
+#drop3 {
 	animation: raindrop .8s ease-out infinite;
 }
 
-#rain > #drop4 {
+#drop4 {
 	animation: raindrop .65s ease-out infinite;
 }
 
-#rain > #drop5 {
+#drop5 {
 	animation: raindrop .7s ease-out infinite;
+}
+
+#flake1 {
+	transform-origin: center;
+	transform-box: fill-box;
+	animation: snowflake1 3s infinite;
+}
+
+#flake2 {
+	transform-origin: center;
+	transform-box: fill-box;
+	animation: snowflake2 5s infinite;
+}
+
+#flake3 {
+	transform-origin: center;
+	transform-box: fill-box;
+	animation: snowflake3 6s infinite;
+}
+
+#flake4 {
+	transform-origin: center;
+	transform-box: fill-box;
+	animation: snowflake4 2s infinite;
+}
+
+#lightning {
+	transform-origin: center;
+	transform-box: fill-box;
+	animation: flash 7s ease-out infinite;
 }
 
 @keyframes weathermove {
@@ -103,7 +133,40 @@ p {
 }
 
 @keyframes grow {
-	0% { transform: scale(.8, .8); }
-	50% { transform: scale(1, 1); }
-	100% { transform: scale(.8, .8); }
+	0% { transform: scale(.8) translate(10%, 10%); }
+	50% { transform: scale(1) translate(0, 0); }
+	100% { transform: scale(.8) translate(10%, 10%); }
+}
+
+@keyframes snowflake1 {
+	0% { transform: scale(1) rotate(0deg); opacity: 1; }
+	50% { transform: scale(1.2) rotate(60deg); opacity: .8; }
+	100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+@keyframes snowflake2 {
+	0% { transform: scale(1); opacity: 1; }
+	50% { transform: scale(.9); opacity: .8; }
+	100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes snowflake3 {
+	0% { transform: scale(1) rotate(0deg); opacity: 1; }
+	50% { transform: scale(1.1) rotate(5deg); opacity: .9; }
+	100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+@keyframes snowflake4 {
+	0% { transform: scale(1) rotate(0deg); }
+	50% { transform: scale(.9) rotate(10deg); }
+	100% { transform: scale(1) rotate(0deg); }
+}
+
+@keyframes flash {
+	0% { opacity: 1; } 
+	2% { opacity: 0; }
+	3% { opacity: 0.6; }
+	4% { opacity: 0.2; }
+	6% { opacity: .9; } 
+	100% { opacity: 0; }
 }
